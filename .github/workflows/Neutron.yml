@@ -236,7 +236,7 @@ jobs:
       - name: Setup KernelSU (if enabled)
         if: ${{ inputs.enable_kernelsu }}
         run: |
-          curl -LSs "https://raw.githubusercontent.com/Willay24/KernelSU/master/kernel/setup.sh" | bash -s master-susfs
+          curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v3.4.2
           DEFCONFIG_PATH="arch/arm64/configs/${{ inputs.defconfig }}"
           if [ -f "$DEFCONFIG_PATH" ]; then
             echo -e "\n# KernelSU\nCONFIG_KSU=y" >> "$DEFCONFIG_PATH"
